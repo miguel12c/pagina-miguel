@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMC</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Calculadora de IMC</h1>
+    </header>
+
+    <main>
+        <!-- Formulario -->
+        <section>
+            <form id="imcForm">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" required>
+
+                <label for="peso">Peso (kg):</label>
+                <input type="number" id="peso" step="0.1" required>
+
+                <label for="altura">Altura (m):</label>
+                <input type="number" id="altura" step="0.01" required>
+
+                <button type="submit">Calcular IMC</button>
+            </form>
+        </section>
+
+        <!-- Resultado -->
+        <section id="resultadoSection">
+            <h2>Resultado:</h2>
+            <p id="resultado"></p>
+            <p id="recomendacion"></p>
+        </section>
+
+        <!-- Datos del estudiante -->
+        <section id="datosEstudiante">
+            <p>Nombre: Miguel Vargas</p>
+            <p>Grado: 1107</p>
+        </section>
+    </main>
+
+    <script src="index.js"></script>
+</body>
+</html>

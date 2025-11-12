@@ -1,47 +1,221 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de IMC</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de IMC</title>
+<style>
+/* === FONDO ANIMADO CON DEGRADADO COLORIDO === */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(-45deg, #ff00cc, #333399, #00c3ff, #ffff1c);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+}
+
+/* ANIMACIÓN DEL FONDO */
+@keyframes gradientMove {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+/* ENCABEZADO */
+header {
+  width: 100%;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  padding: 20px 0;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* CONTENEDOR PRINCIPAL */
+main {
+  width: 90%;
+  max-width: 420px;
+  margin-top: 40px;
+}
+
+/* TARJETAS (formulario, resultado, datos) */
+form, #resultadoSection, #datosEstudiante {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  margin-bottom: 25px;
+  transition: 0.3s;
+}
+
+form:hover, #resultadoSection:hover, #datosEstudiante:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 50px rgba(255, 0, 200, 0.4);
+}
+
+/* ETIQUETAS */
+label {
+  display: block;
+  font-weight: 600;
+  margin-top: 12px;
+  color: #ffe6ff;
+}
+
+/* INPUTS */
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  outline: none;
+  transition: 0.3s;
+}
+
+input::placeholder {
+  color: #eee;
+}
+
+input:focus {
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 15px #ff00cc;
+}
+
+/* BOTÓN */
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #ff00cc, #3333ff);
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.6);
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #3333ff, #ff00cc);
+  box-shadow: 0 0 25px rgba(255, 0, 255, 0.8);
+}
+
+/* RESULTADOS */
+#resultadoSection {
+  text-align: center;
+}
+
+#resultadoSection h2 {
+  color: #ffb3ff;
+}
+
+#resultado {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #fff;
+}
+
+#recomendacion {
+  font-size: 1rem;
+  color: #e0e0ff;
+  margin-top: 8px;
+}
+
+/* DATOS DEL ESTUDIANTE */
+#datosEstudiante {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #ffdfff;
+}
+</style>
 </head>
 <body>
-    <header>
-        <h1>Calculadora de IMC</h1>
-    </header>
+  <header>
+    <h1>Calculadora de IMC</h1>
+  </header>
 
-    <main>
-        <!-- Formulario -->
-        <section>
-            <form id="imcForm">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" required>
+  <main>
+    <!-- Formulario -->
+    <section>
+      <form id="imcForm">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" placeholder="Tu nombre..." required>
 
-                <label for="peso">Peso (kg):</label>
-                <input type="number" id="peso" step="0.1" required>
+        <label for="peso">Peso (kg):</label>
+        <input type="number" id="peso" step="0.1" placeholder="Ej: 70.5" required>
 
-                <label for="altura">Altura (m):</label>
-                <input type="number" id="altura" step="0.01" required>
+        <label for="altura">Altura (m):</label>
+        <input type="number" id="altura" step="0.01" placeholder="Ej: 1.75" required>
 
-                <button type="submit">Calcular IMC</button>
-            </form>
-        </section>
+        <button type="submit">Calcular IMC</button>
+      </form>
+    </section>
 
-        <!-- Resultado -->
-        <section id="resultadoSection">
-            <h2>Resultado:</h2>
-            <p id="resultado"></p>
-            <p id="recomendacion"></p>
-        </section>
+    <!-- Resultado -->
+    <section id="resultadoSection">
+      <h2>Resultado:</h2>
+      <p id="resultado"></p>
+      <p id="recomendacion"></p>
+    </section>
 
-        <!-- Datos del estudiante -->
-        <section id="datosEstudiante">
-            <p>Nombre: Miguel Vargas</p>
-            <p>Grado: 1107</p>
-        </section>
-    </main>
+    <!-- Datos del estudiante -->
+    <section id="datosEstudiante">
+      <p>Nombre: Miguel Vargas</p>
+      <p>Grado: 1107</p>
+    </section>
+  </main>
 
-    <script src="index.js"></script>
+  <script>
+  document.getElementById("imcForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let nombre = document.getElementById("nombre").value;
+    let peso = parseFloat(document.getElementById("peso").value);
+    let altura = parseFloat(document.getElementById("altura").value);
+
+    if (!nombre || isNaN(peso) || isNaN(altura)) {
+      alert("Por favor completa todos los campos correctamente.");
+      return;
+    }
+
+    let imc = peso / (altura * altura);
+    let imcRedondeado = imc.toFixed(2);
+    let clasificacion = "";
+    let recomendacion = "";
+
+    if (imc < 18.5) {
+      clasificacion = "Peso bajo";
+      recomendacion = `${nombre}, deberías consultar con un nutricionista para subir de peso de forma saludable.`;
+    } else if (imc >= 18.5 && imc <= 24.9) {
+      clasificacion = "Peso normal";
+      recomendacion = `${nombre}, ¡estás en un rango saludable! Mantén una dieta equilibrada y ejercicio regular.`;
+    } else {
+      clasificacion = "Sobrepeso";
+      recomendacion = `${nombre}, considera una alimentación balanceada y actividad física para mejorar tu salud.`;
+    }
+
+    document.getElementById("resultado").textContent = `Tu IMC es: ${imcRedondeado} (${clasificacion})`;
+    document.getElementById("recomendacion").textContent = recomendacion;
+  });
+  </script>
 </body>
 </html>

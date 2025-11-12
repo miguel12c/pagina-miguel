@@ -1,70 +1,110 @@
+/* --- ESTILO MODERNO PARA CALCULADORA --- */
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #e0eafc, #cfdef3);
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
+/* Encabezado */
 header {
-    background-color: #c40902;
-    color: rgb(0, 0, 0);
-    padding: 15px;
+    background: linear-gradient(90deg, #1e3c72, #2a5298);
+    color: white;
+    padding: 20px;
     text-align: center;
+    letter-spacing: 1px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Formulario */
 form {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 400px;
-    margin: 20px auto;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 420px;
+    margin: 30px auto;
+    box-shadow: 6px 6px 15px rgba(0,0,0,0.1),
+                -6px -6px 15px rgba(255,255,255,0.6);
+    transition: transform 0.2s ease-in-out;
+}
+
+form:hover {
+    transform: translateY(-5px);
 }
 
 label {
     display: block;
-    margin-top: 10px;
-    font-weight: bold;
+    margin-top: 12px;
+    font-weight: 600;
+    color: #2a2a2a;
 }
 
 input {
     width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 10px;
+    margin-top: 6px;
+    border: none;
+    border-radius: 8px;
+    background: #f1f3f6;
+    box-shadow: inset 3px 3px 6px rgba(0,0,0,0.1),
+                inset -3px -3px 6px rgba(255,255,255,0.7);
+    font-size: 15px;
+    color: #333;
+    transition: all 0.2s ease-in-out;
 }
 
+input:focus {
+    outline: none;
+    box-shadow: 0 0 5px #2a5298;
+}
+
+/* Botones */
 button {
-    background-color: #ff0000;
+    background: linear-gradient(90deg, #2a5298, #1e3c72);
     color: white;
-    padding: 10px;
+    padding: 12px;
     border: none;
-    border-radius: 5px;
-    margin-top: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
     cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s ease-in-out;
     width: 100%;
+    box-shadow: 3px 3px 8px rgba(0,0,0,0.15);
 }
 
 button:hover {
-    background-color: #2e5ca4;
+    background: linear-gradient(90deg, #1e3c72, #2a5298);
+    transform: translateY(-2px);
 }
 
+/* Resultados */
 #resultadoSection {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 400px;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+    max-width: 420px;
     margin: 20px auto;
     text-align: center;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 6px 6px 15px rgba(0,0,0,0.1),
+                -6px -6px 15px rgba(255,255,255,0.6);
 }
 
+/* Datos del estudiante */
 #datosEstudiante {
-    background-color: #e3f2fd;
+    background-color: #f1f8ff;
     padding: 20px;
-    border-radius: 10px;
-    max-width: 400px;
+    border-radius: 15px;
+    max-width: 420px;
     margin: 20px auto;
     text-align: center;
+    color: #333;
+    font-weight: 500;
+    box-shadow: inset 3px 3px 8px rgba(0,0,0,0.05),
+                inset -3px -3px 8px rgba(255,255,255,0.8);
 }

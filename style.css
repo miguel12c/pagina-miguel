@@ -1,110 +1,128 @@
-/* --- ESTILO MODERNO PARA CALCULADORA --- */
+/* --- NUEVO DISEÑO MODERNO, COMPATIBLE CON VISUAL STUDIO --- */
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #e0eafc, #cfdef3);
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
     margin: 0;
     padding: 0;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    align-items: center;
 }
 
 /* Encabezado */
 header {
-    background: linear-gradient(90deg, #1e3c72, #2a5298);
+    width: 100%;
+    background: rgba(255, 255, 255, 0.15);
     color: white;
-    padding: 20px;
     text-align: center;
+    padding: 20px 0;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
     letter-spacing: 1px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Formulario */
-form {
+/* Contenedor general */
+main {
+    width: 100%;
+    max-width: 500px;
+    margin-top: 30px;
+}
+
+/* Tarjeta principal */
+form, #resultadoSection, #datosEstudiante {
     background-color: #ffffff;
-    padding: 30px;
     border-radius: 15px;
-    max-width: 420px;
-    margin: 30px auto;
-    box-shadow: 6px 6px 15px rgba(0,0,0,0.1),
-                -6px -6px 15px rgba(255,255,255,0.6);
-    transition: transform 0.2s ease-in-out;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    padding: 25px;
+    margin-bottom: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-form:hover {
+form:hover, #resultadoSection:hover, #datosEstudiante:hover {
     transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
 }
 
+/* Etiquetas */
 label {
     display: block;
-    margin-top: 12px;
-    font-weight: 600;
-    color: #2a2a2a;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
 }
 
+/* Campos de texto */
 input {
     width: 100%;
     padding: 10px;
     margin-top: 6px;
-    border: none;
+    border: 1px solid #ccc;
     border-radius: 8px;
-    background: #f1f3f6;
-    box-shadow: inset 3px 3px 6px rgba(0,0,0,0.1),
-                inset -3px -3px 6px rgba(255,255,255,0.7);
     font-size: 15px;
-    color: #333;
-    transition: all 0.2s ease-in-out;
+    transition: border 0.2s, box-shadow 0.2s;
 }
 
 input:focus {
+    border-color: #2575fc;
     outline: none;
-    box-shadow: 0 0 5px #2a5298;
+    box-shadow: 0 0 5px rgba(37,117,252,0.6);
 }
 
-/* Botones */
+/* Botón */
 button {
-    background: linear-gradient(90deg, #2a5298, #1e3c72);
-    color: white;
+    width: 100%;
     padding: 12px;
+    background: linear-gradient(90deg, #2575fc, #6a11cb);
+    color: white;
     border: none;
     border-radius: 8px;
     margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
-    font-weight: 600;
-    font-size: 15px;
-    transition: all 0.3s ease-in-out;
-    width: 100%;
-    box-shadow: 3px 3px 8px rgba(0,0,0,0.15);
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 button:hover {
-    background: linear-gradient(90deg, #1e3c72, #2a5298);
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 
-/* Resultados */
+/* Sección de resultado */
 #resultadoSection {
-    background-color: #ffffff;
-    padding: 25px;
-    border-radius: 15px;
-    max-width: 420px;
-    margin: 20px auto;
     text-align: center;
-    box-shadow: 6px 6px 15px rgba(0,0,0,0.1),
-                -6px -6px 15px rgba(255,255,255,0.6);
+}
+
+#resultadoSection h2 {
+    color: #2575fc;
+}
+
+#resultado {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+#recomendacion {
+    font-size: 1rem;
+    color: #555;
 }
 
 /* Datos del estudiante */
 #datosEstudiante {
-    background-color: #f1f8ff;
-    padding: 20px;
-    border-radius: 15px;
-    max-width: 420px;
-    margin: 20px auto;
     text-align: center;
-    color: #333;
+    background-color: #f5f7ff;
     font-weight: 500;
-    box-shadow: inset 3px 3px 8px rgba(0,0,0,0.05),
-                inset -3px -3px 8px rgba(255,255,255,0.8);
+    color: #333;
+}
+
+#datosEstudiante p {
+    margin: 8px 0;
 }

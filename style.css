@@ -1,150 +1,140 @@
-/* --- ESTILO MODERNO CON EFECTO GLASS Y DEGRADADOS --- */
-
+/* === FONDO ANIMADO CON EFECTO GLASS === */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #141e30, #243b55);
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* ENCABEZADO */
-header {
-    width: 100%;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    color: #fff;
-    padding: 20px 0;
-    font-size: 1.8rem;
-    letter-spacing: 1px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-/* CONTENEDOR PRINCIPAL */
-main {
-    width: 100%;
-    max-width: 420px;
-    margin-top: 40px;
-}
-
-/* TARJETAS (formularios, resultados, datos) */
-form, #resultadoSection, #datosEstudiante {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(15px);
-    border-radius: 20px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
-    padding: 30px;
-    color: #fff;
-    margin-bottom: 25px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-form:hover, #resultadoSection:hover, #datosEstudiante:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5);
-}
-
-/* ETIQUETAS */
-label {
-    display: block;
-    font-weight: 600;
-    margin-top: 12px;
-    color: #cce0ff;
-}
-
-/* INPUTS */
-input {
-    width: 100%;
-    padding: 10px;
-    margin-top: 6px;
-    border: none;
-    border-radius: 10px;
-    font-size: 15px;
-    background: rgba(255, 255, 255, 0.2);
-    color: #fff;
-    outline: none;
-    transition: all 0.3s ease;
-}
-
-input::placeholder {
-    color: #ccc;
-}
-
-input:focus {
-    background: rgba(255, 255, 255, 0.3);
-    box-shadow: 0 0 10px rgba(0, 150, 255, 0.8);
-}
-
-/* BOTÓN */
-button {
-    width: 100%;
-    padding: 12px;
-    margin-top: 20px;
-    font-size: 16px;
-    font-weight: 600;
-    border: none;
-    border-radius: 12px;
-    background: linear-gradient(90deg, #00c6ff, #0072ff);
-    color: #fff;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 150, 255, 0.5);
-}
-
-button:hover {
-    transform: translateY(-2px);
-    background: linear-gradient(90deg, #0072ff, #00c6ff);
-    box-shadow: 0 6px 25px rgba(0, 150, 255, 0.7);
-}
-
-/* RESULTADOS */
-#resultadoSection {
-    text-align: center;
-}
-
-#resultadoSection h2 {
-    color: #a8d8ff;
-}
-
-#resultado {
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: #fff;
-    margin-top: 10px;
-}
-
-#recomendacion {
-    font-size: 1rem;
-    color: #cce0ff;
-    margin-top: 8px;
-}
-
-/* DATOS DEL ESTUDIANTE */
-#datosEstudiante {
-    text-align: center;
-    color: #fff;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-#datosEstudiante p {
-    margin: 5px 0;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(-45deg, #1b2735, #090a0f, #283e51, #485563);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
 }
 
 /* ANIMACIÓN DE FONDO */
 @keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-body {
-    background: linear-gradient(-45deg, #141e30, #243b55, #0f2027, #203a43);
-    background-size: 400% 400%;
-    animation: gradientMove 10s ease infinite;
+/* ENCABEZADO */
+header {
+  width: 100%;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  padding: 20px 0;
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  color: #00eaff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* CONTENEDOR PRINCIPAL */
+main {
+  width: 90%;
+  max-width: 420px;
+  margin-top: 40px;
+}
+
+/* FORMULARIO Y SECCIONES */
+form, #resultadoSection, #datosEstudiante {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 25px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  transition: 0.3s;
+}
+
+form:hover, #resultadoSection:hover, #datosEstudiante:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 50px rgba(0, 255, 255, 0.3);
+}
+
+/* ETIQUETAS */
+label {
+  display: block;
+  font-weight: 600;
+  margin-top: 15px;
+  color: #a8e8ff;
+}
+
+/* CAMPOS */
+input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  outline: none;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+input::placeholder {
+  color: #b3b3b3;
+}
+
+input:focus {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 10px #00eaff;
+}
+
+/* BOTÓN */
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #00eaff, #0072ff);
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+}
+
+button:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+}
+
+/* RESULTADOS */
+#resultadoSection {
+  text-align: center;
+}
+
+#resultadoSection h2 {
+  color: #00eaff;
+  margin-bottom: 10px;
+}
+
+#resultado {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+#recomendacion {
+  font-size: 1rem;
+  color: #cdefff;
+  margin-top: 8px;
+}
+
+/* DATOS DEL ESTUDIANTE */
+#datosEstudiante {
+  text-align: center;
+  color: #a8e8ff;
+  font-size: 0.95rem;
 }
